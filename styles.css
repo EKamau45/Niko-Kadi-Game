@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  display: grid;
+  /* Mobile layout: one column, three rows */
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 80px 1fr 50px;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgb(0, 0, 0);
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;       /* Use flex to align the H1 vertically */
+  align-items: center;
+  flex-shrink: 0;
+}
+
+main {
+  background-color: rgb(37, 37, 37);
+  flex-grow: 1;        /* Fills all remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: rgb(0, 0, 0);
+  height: 50px;
+  position: sticky;
+  bottom: 0;
+  flex-shrink: 0;
+}
+
+/* DESKTOP REFINEMENT */
+@media only screen and (min-width: 600px) {
+  body {
+        /* Desktop: Sidebar (footer) on left, Main on right, Header stays on top */
+    grid-template-areas: 
+      " header header"
+      "footer main";
+    grid-template-columns: 0px 1fr;
+    grid-template-rows: 80px 1fr;
+  }
+
+  header {
+    width: 100%;        /* Keeps header full width at top */
+  }
+  main{
+    margin-left: 80px;
+    background-color: rgb(37, 37, 37);
+  }
+
+  footer {
+    width: 50px;
+    height: calc(100vh - 80px); /* Full height minus header */
+    top: 80px;
+    order: -1;          /* Moves footer to the left of main */
+  }
+}
+
+/* TEXT & GRID STYLES */
+.Intro {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-size: 15px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+
+}
+.Play{
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr;
+  flex-grow: 1; /* Ensures the grid fills the main area */
+  color: aliceblue;
+}
+.Opponent{
+  background-color: rgb(26, 26, 26);
+}
+.Cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 5px;
+}
+.playField{
+  background-color: rgb(70, 70, 70);
+  width: 100%;
+  box-shadow: inset 0 0 10px 5px #0a0a0a;
+}
+.cards{
+  background-color: rgb(60, 60, 60);
+  width: 100%;
+  box-shadow: inset 0 0 10px 5px #0a0a0a;
+}
+.op{
+  margin: 0px;
+}
+#Op-btn{
+  border-radius: 50px;
+}
+.OpAccount{
+ 
+  display: inline-block;
+  padding: 3px;
+  margin: 5px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+
+.MyAccount{
+ 
+  display: inline-block;
+  padding: 3px;
+  margin: 5px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+.Details{
+   background-color: rgb(13, 13, 13);
+}
+.cds{
+  display: inline-block;
+  padding: 3px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.MyDeck{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  margin-left: 10px;
+
+}
+.cd{
+  background-color: aliceblue;
+  height: 50px;
+  width: 100px;
+  gap: 1px;
+}
