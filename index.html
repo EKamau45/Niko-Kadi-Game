@@ -23,7 +23,8 @@
   <main>
     <div class="container">
       <div class="Play">
-        <div class="Opponent">
+        <!-- OPPONENTS SECTION -->
+        <div class="opponents">
           <div class="OpAccount">
             <div class="Details">
               <button id="Op-btn">&</button>
@@ -33,22 +34,36 @@
               <span>Score: 0</span>
             </div>
           </div>
-        </div>
-        <div class="Cards">
-          <div class="playField">
-            <div class="cds">
-              <span id="cds">PlayField</span]>
-            </div>
+          <div class="opponent-cards">
+            <!-- Opponent cards will display here -->
           </div>
+        </div>
+
+        <!-- PLAYFIELD SECTION -->
+        <div class="playfield">
+          <div class="playfield-header">
+            <span>Playfield</span>
+          </div>
+          <div class="playfield-cards">
+            <!-- Cards played on the field -->
+          </div>
+        </div>
+
+        <!-- MIDDLE SECTION: Deck -->
+        <div class="middle-section">
           <div class="cards">
-            <div class="cds">
-              <span id="cds">Cards</span>
+            <div class="cards-header">
+              <span>Deck</span>
             </div>
-            
+            <div class="cards-deck">
+              <!-- Drawing deck cards -->
+            </div>
           </div>
         </div>
-        <div class="MyCards">
-           <div class="MyAccount">
+
+        <!-- MY CARDS SECTION -->
+        <div class="my-cards">
+          <div class="MyAccount">
             <div class="Details">
               <button id="Op-btn">&</button>
               <span>Edwin45 </span>
@@ -57,14 +72,17 @@
               <span>Score: 0</span>
             </div>
           </div>
+          <div class="my-cards-hand">
+            <!-- Player's hand cards display here -->
+          </div>
         </div>
       </div>
-      
-    </div>    
+    </div>
 
   </main>
   <footer>
 
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
